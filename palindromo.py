@@ -16,21 +16,6 @@
 
 import os
 
-"""class Palindromo():
-    def Verificar(self, cadena):
-        self.reversed = ''.join(reversed(cadena))
-        if cadena == self.reversed:
-            print("Es un palíndromo")
-            return True
-        else:
-            print("No es un palíndromo")
-            return False
-
-plm = Palindromo()
-cadena_original = input('cadena: ')
-resultado = plm.Verificar(cadena_original)
-print(resultado)"""
-
 
 def Verificar(cadena):
     reverso = ''.join(reversed(cadena))
@@ -75,6 +60,11 @@ if __name__ == '__main__':
             print('La cadena necesita {} caracteres'.format(completado))
 
     elif choice == "y":
+        pwd = os.getcwd()
+        ls = os.listdir(pwd)
+        with os.scandir(pwd) as files:
+            files = [file.name for file in files if file.is_file() and file.name.endswith('.IN')]
+        print(files)
         ruta = input("Nombre del archivo: ")
         lista = []
         f = open(str(ruta), "r")
